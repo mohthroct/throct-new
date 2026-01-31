@@ -63,9 +63,23 @@ body {
 
 /* Glass effect */
 .glass {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(17, 24, 39, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Button gradients */
+.btn-primary {
+  background: linear-gradient(to right, #6366f1, #22d3ee) !important;
+  color: white !important;
+}
+
+.btn-glass {
+  background: rgba(17, 24, 39, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Animated gradient border */

@@ -26,15 +26,27 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass py-4" : "py-6"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        padding: scrolled ? "1rem 0" : "1.5rem 0",
+        background: scrolled ? "rgba(17, 24, 39, 0.7)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+      }}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.a
           href="#"
-          className="text-2xl font-bold gradient-text"
+          style={{
+            fontSize: "1.5rem",
+            fontWeight: 700,
+            background: "linear-gradient(135deg, #6366f1 0%, #22d3ee 50%, #f472b6 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -64,7 +76,14 @@ export default function Navbar() {
         {/* CTA Button */}
         <motion.a
           href="#contact"
-          className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-full font-medium hover:shadow-lg hover:shadow-indigo-500/25 transition-all"
+          className="hidden md:block"
+          style={{
+            padding: "0.625rem 1.5rem",
+            background: "linear-gradient(to right, #6366f1, #22d3ee)",
+            borderRadius: "9999px",
+            fontWeight: 500,
+            color: "white",
+          }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -98,7 +117,13 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass mt-4 mx-6 rounded-2xl overflow-hidden"
+            className="md:hidden mt-4 mx-6 rounded-2xl overflow-hidden"
+            style={{
+              background: "rgba(17, 24, 39, 0.9)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+            }}
           >
             <ul className="p-6 space-y-4">
               {navItems.map((item) => (
@@ -115,7 +140,16 @@ export default function Navbar() {
               <li>
                 <a
                   href="#contact"
-                  className="block w-full text-center py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-full font-medium"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "center",
+                    padding: "0.75rem",
+                    background: "linear-gradient(to right, #6366f1, #22d3ee)",
+                    borderRadius: "9999px",
+                    fontWeight: 500,
+                    color: "white",
+                  }}
                 >
                   Get Started
                 </a>

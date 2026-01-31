@@ -139,7 +139,15 @@ export default function Hero() {
         >
           <motion.a
             href="#contact"
-            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-indigo-500/30 transition-all"
+            style={{
+              background: "linear-gradient(to right, #6366f1, #22d3ee)",
+              padding: "1rem 2rem",
+              borderRadius: "9999px",
+              fontWeight: 600,
+              fontSize: "1.125rem",
+              color: "white",
+              display: "inline-block",
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -147,7 +155,18 @@ export default function Hero() {
           </motion.a>
           <motion.a
             href="#work"
-            className="px-8 py-4 glass rounded-full font-semibold text-lg hover:bg-white/10 transition-all"
+            style={{
+              background: "rgba(17, 24, 39, 0.7)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              padding: "1rem 2rem",
+              borderRadius: "9999px",
+              fontWeight: 600,
+              fontSize: "1.125rem",
+              color: "white",
+              display: "inline-block",
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

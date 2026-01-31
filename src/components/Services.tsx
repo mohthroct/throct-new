@@ -80,11 +80,25 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       />
 
       {/* Card */}
-      <div className="relative h-full glass rounded-3xl p-8 transition-all duration-300 group-hover:border-white/20">
+      <div 
+        className="relative h-full rounded-3xl p-8 transition-all duration-300"
+        style={{
+          background: "rgba(17, 24, 39, 0.7)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+        }}
+      >
         {/* Icon */}
         <div
-          className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-3xl mb-6`}
-          style={{ transform: "translateZ(20px)" }}
+          className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6"
+          style={{ 
+            transform: "translateZ(20px)",
+            background: index === 0 ? "linear-gradient(to bottom right, #6366f1, #7c3aed)" :
+                       index === 1 ? "linear-gradient(to bottom right, #06b6d4, #2563eb)" :
+                       index === 2 ? "linear-gradient(to bottom right, #10b981, #14b8a6)" :
+                       "linear-gradient(to bottom right, #ec4899, #f43f5e)",
+          }}
         >
           {service.icon}
         </div>
@@ -110,7 +124,13 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           {service.features.map((feature) => (
             <span
               key={feature}
-              className="px-3 py-1 text-sm bg-white/5 rounded-full text-gray-300"
+              style={{
+                padding: "0.25rem 0.75rem",
+                fontSize: "0.875rem",
+                background: "rgba(255, 255, 255, 0.05)",
+                borderRadius: "9999px",
+                color: "#d1d5db",
+              }}
             >
               {feature}
             </span>
